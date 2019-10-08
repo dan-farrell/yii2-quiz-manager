@@ -2,7 +2,12 @@
 
 namespace app\models;
 
-class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
+use \yii\base\BaseObject;
+
+/**
+ *
+ */
+class User extends BaseObject implements \yii\web\IdentityInterface
 {
     public $id;
     public $username;
@@ -26,7 +31,6 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
             'accessToken' => '101-token',
         ],
     ];
-
 
     /**
      * {@inheritdoc}
@@ -101,4 +105,5 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     {
         return $this->password === $password;
     }
+
 }
