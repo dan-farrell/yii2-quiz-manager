@@ -16,12 +16,16 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Np--P-_FpqD0PduQT_0m1oQN2bE3qgiu',
         ],
-        'cache' => ['class' => 'yii\caching\FileCache'],
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
-        'errorHandler' => ['errorAction' => 'site/error'],
+        'errorHandler' => [
+            'errorAction' => 'site/error',
+        ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set
