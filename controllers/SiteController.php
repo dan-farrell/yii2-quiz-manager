@@ -4,12 +4,16 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\Response;
-use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
 
+use app\models\ContactForm;
+use app\models\LoginForm;
+
+/**
+ *
+ */
 class SiteController extends Controller
 {
     /**
@@ -76,14 +80,14 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
+
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
 
         $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+
+        return $this->render('login', ['model' => $model]);
     }
 
     /**
@@ -111,9 +115,8 @@ class SiteController extends Controller
 
             return $this->refresh();
         }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+
+        return $this->render('contact', ['model' => $model]);
     }
 
     /**
@@ -125,4 +128,5 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
 }

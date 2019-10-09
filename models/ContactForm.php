@@ -10,12 +10,16 @@ use yii\base\Model;
  */
 class ContactForm extends Model
 {
-    public $name;
-    public $email;
-    public $subject;
-    public $body;
-    public $verifyCode;
 
+    public $name;
+
+    public $email;
+
+    public $subject;
+
+    public $body;
+
+    public $verifyCode;
 
     /**
      * @return array the validation rules.
@@ -37,9 +41,7 @@ class ContactForm extends Model
      */
     public function attributeLabels()
     {
-        return [
-            'verifyCode' => 'Verification Code',
-        ];
+        return ['verifyCode' => 'Verification Code'];
     }
 
     /**
@@ -60,6 +62,8 @@ class ContactForm extends Model
 
             return true;
         }
+
         return false;
     }
+
 }
