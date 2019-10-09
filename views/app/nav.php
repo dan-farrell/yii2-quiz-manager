@@ -23,12 +23,12 @@ if (Yii::$app->user->isGuest) {
     array_push($adminMenu, ['label' => 'Login', 'url' => ['/site/login']]);
 } else {
     $form = '<li>'.Html::beginForm(['/site/logout'], 'post').Html::submitButton(
-        'Logout ('.Yii::$app->user->identity->username.')',
+        'Logout',
         ['class' => 'btn btn-link logout']
     ).Html::endForm().'</li>';
 
     $dropdown = '<li class="dropdown">
-        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account</a>'.Dropdown::widget([
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account ('.Yii::$app->user->identity->username.')</a>'.Dropdown::widget([
             'items' => [
                 ['label' => 'Admin', 'url' => ['/site/admin']],
                 $form,
