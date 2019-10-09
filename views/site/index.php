@@ -4,10 +4,6 @@
 
 $this->title = 'My Yii Application';
 
-if (!Yii::$app->user->isGuest) {
-    echo 'hello world';
-}
-
 ?>
 
 <div class="site-index">

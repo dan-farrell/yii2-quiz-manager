@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../../assets/styles/scss/main.scss",
+		"../../assets/styles/scss/imports.scss",
+		"../../assets/styles/scss/variables.scss",
+		"../../assets/styles/scss/mixins.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

@@ -30,7 +30,7 @@ if (Yii::$app->user->isGuest) {
     $dropdown = '<li class="dropdown">
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account</a>'.Dropdown::widget([
             'items' => [
-                ['label' => 'Admin', 'url' => ['/site/admin/index']],
+                ['label' => 'Admin', 'url' => ['/site/admin']],
                 $form,
             ],
         ]);
