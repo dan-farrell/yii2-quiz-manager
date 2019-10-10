@@ -24,7 +24,7 @@ if (Yii::$app->user->isGuest) {
     $adminItems = '<li class="dropdown">
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account ('.Yii::$app->user->identity->username.')</a>'.Dropdown::widget([
             'items' => [
-                ['label' => 'Profile', 'url' => ['/site/admin']],
+                ['label' => 'Profile', 'url' => ['/profile/index']],
                 ['label' => 'Red', 'url' => ['#']],
                 '<li>'.Html::beginForm(['/site/logout'], 'post').Html::submitButton('Logout', ['class' => 'btn btn-link logout']).Html::endForm().'</li>',
             ],

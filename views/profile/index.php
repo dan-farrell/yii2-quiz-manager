@@ -43,6 +43,7 @@ $profile = Profile::find()
         <div class="modal-content">
             <?php $form = ActiveForm::begin([
                 'id' => 'profile',
+                'action' => 'update',
                 'options' => [
                     'role' => 'form',
                     'class' => 'profile-form',
@@ -67,8 +68,7 @@ $profile = Profile::find()
                 <!-- Button to submit the new data to the database and close the modal -->
                 <?= Html::submitButton('Save', [
                     'class' => 'btn btn-primary',
-                    // 'id' => 'saveBtn',
-                    'data-dismiss' => 'modal',
+                    // 'data-dismiss' => 'modal',
                 ]); ?>
             </div><!-- /.modal-footer -->
 
