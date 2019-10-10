@@ -7,6 +7,7 @@ use yii\bootstrap\Html;
 use yii\widgets\ActiveForm;
 use app\models\Profile;
 
+// Yii2 Query to get the data for specific user using the logged in users name
 $profile = Profile::find()
     ->where(['name' => Yii::$app->user->identity->username])
     ->one();
@@ -16,14 +17,16 @@ $profile = Profile::find()
 <div class="profile">
     <div class="row">
         <div class="col-md-3">
-            <?= Html::img('@web'.$profile->img, [
+            <?php
+            echo Html::img('@web'.$profile->img, [
                 'alt' => Yii::$app->user->identity->username."'s Profile Photo",
                 'class' => 'img-responsive',
-            ]); ?>
+            ]);
 
-            <?= Html::tag('h2', ucfirst(Yii::$app->user->identity->username)); ?>
-            <?= Html::tag('p', $profile->place); ?>
-            <?= Html::tag('p', $profile->age); ?>
+            echo Html::tag('h2', ucfirst(Yii::$app->user->identity->username));
+            echo Html::tag('p', $profile->place);
+            echo Html::tag('p', $profile->age);
+            ?>
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit</button>
         </div>
@@ -53,8 +56,10 @@ $profile = Profile::find()
 
             <div class="modal-body">
                 <!-- Form fields to edit the data before updating the database -->
-                <?= $form->field($profile, 'place'); ?>
-                <?= $form->field($profile, 'age'); ?>
+                <?php
+                echo $form->field($profile, 'place');
+                echo $form->field($profile, 'age');
+                ?>
             </div><!-- /.modal-body -->
 
             <div class="modal-footer">
@@ -62,7 +67,7 @@ $profile = Profile::find()
                 <!-- Button to submit the new data to the database and close the modal -->
                 <?= Html::submitButton('Save', [
                     'class' => 'btn btn-primary',
-                    'id' => 'saveBtn',
+                    // 'id' => 'saveBtn',
                     'data-dismiss' => 'modal',
                 ]); ?>
             </div><!-- /.modal-footer -->
