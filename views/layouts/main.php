@@ -23,7 +23,7 @@ $this->beginPage();
         <?php $this->registerCsrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
-    </head>
+    </head><!-- /header -->
 
     <body>
         <?php $this->beginBody() ?>
@@ -48,7 +48,7 @@ $this->beginPage();
         </footer><!-- /.footer -->
 
         <?php $this->endBody(); ?>
-    </body>
-</html>
+    </body><!-- /body -->
+</html><!-- /html -->
 
 <?php $this->endPage();

@@ -28,12 +28,12 @@ $profile = Profile::find()
             ?>
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit</button>
-        </div>
+        </div><!-- /.col-md-3 -->
 
         <div class="col-md-9">
             <?= $profile->desc; ?>
-        </div>
-    </div>
+        </div><!-- /.col-md-9 -->
+    </div><!-- /.row -->
 </div><!-- /.profile -->
 
 <?= $this->render('/profile/components/modal', ['profile' => $profile]); ?>
