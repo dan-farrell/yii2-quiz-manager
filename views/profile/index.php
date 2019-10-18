@@ -11,6 +11,21 @@ $profile = Profile::find()
     ->where(['name' => Yii::$app->user->identity->username])
     ->one();
 
+$things = [
+    [
+        'foo' => 5.5,
+        'bar' => 'abc',
+    ],
+    [
+        'foo' => 7.7,
+        'bar' => 'xyz',
+    ],
+    [
+        'foo' => 2.2,
+        'bar' => 'efg',
+    ]
+];
+
 ?>
 
 <div class="profile">

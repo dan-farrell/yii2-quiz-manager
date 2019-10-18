@@ -51,4 +51,4 @@ $this->beginPage();
     </body><!-- /body -->
 </html><!-- /html -->
 
-<?php $this->endPage();
+<?php $this->endPage(); ?>
