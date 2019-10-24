@@ -40,7 +40,8 @@ $navItems = array_merge($navItems, $adminMenu);
 NavBar::begin([
   'brandLabel' => Yii::$app->name,
   'brandUrl' => Yii::$app->homeUrl,
-  'options' => ['class' => 'navbar-inverse navbar-fixed-top'],
+  // 'options' => ['class' => 'navbar-inverse navbar-fixed-top'],
+  'options' => ['class' => 'navbar-inverse'],
 ]);
 
 echo Nav::widget([

@@ -32,7 +32,13 @@ $this->beginPage();
     <?php $this->beginBody(); ?>
 
     <div class="wrap">
-      <?= $this->render('/app/nav'); ?>
+      <?php
+      if (!Yii::$app->user->isGuest) {
+        echo $this->render('/admin/nav');
+      }
+
+      echo $this->render('/app/nav');
+      ?>
 
       <div class="container">
         <?php
