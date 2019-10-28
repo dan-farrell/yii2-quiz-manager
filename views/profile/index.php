@@ -1,7 +1,6 @@
 <?php
 
 $this->title = Yii::$app->user->identity->username."' Profile";
-$this->params['breadcrumbs'][] = 'Profile';
 
 use yii\bootstrap\Html;
 use app\models\Profile;
@@ -10,6 +9,14 @@ use app\models\Profile;
 $profile = Profile::find()
   ->where(['name' => Yii::$app->user->identity->username])
   ->one();
+
+if (Yii::$app->user->identity->permission === 'edit') {
+  echo 'edit';
+} else if (Yii::$app->user->identity->permission === 'view') {
+  echo 'view';
+} else {
+  echo 'restricted';
+}
 
 // $things = [
 //   [

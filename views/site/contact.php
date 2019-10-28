@@ -8,7 +8,6 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
 $this->title = 'Contact';
-$this->params['breadcrumbs'][] = $this->title;
 
 ?>
 

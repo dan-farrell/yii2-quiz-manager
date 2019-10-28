@@ -61,7 +61,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+      if (Yii::$app->user->isGuest) {
+        return $this->redirect(['login']);
+      } else {
         return $this->render('index');
+      }
     }
 
     /**
@@ -78,7 +82,7 @@ class SiteController extends Controller
         $model = new LoginForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect(['profile/index']);
+            return $this->redirect(['quiz/index']);
         }
 
         $model->password = '';

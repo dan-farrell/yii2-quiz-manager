@@ -7,9 +7,10 @@ use yii\helpers\Html;
 
 // Array containing navigation options
 $navItems = [
-  ['label' => 'Home', 'url' => ['/site/index']],
+  // ['label' => 'Home', 'url' => ['/site/index']],
   ['label' => 'About', 'url' => ['/site/about']],
-  ['label' => 'Contact', 'url' => ['/site/contact']]
+  ['label' => 'Quiz', 'url' => ['/quiz/index']],
+  // ['label' => 'Contact', 'url' => ['/site/contact']]
 ];
 
 // Blank array for the admin menu items
@@ -38,7 +39,7 @@ array_push($adminMenu, $adminItems);
 $navItems = array_merge($navItems, $adminMenu);
 
 NavBar::begin([
-  'brandLabel' => Yii::$app->name,
+  'brandLabel' => 'Quiz Manager',
   'brandUrl' => Yii::$app->homeUrl,
   // 'options' => ['class' => 'navbar-inverse navbar-fixed-top'],
   'options' => ['class' => 'navbar-inverse'],

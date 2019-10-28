@@ -28,24 +28,22 @@ $this->beginPage();
     <script src="https://kit.fontawesome.com/a2d0b4512b.js" crossorigin="anonymous"></script>
   </head><!-- /header -->
 
-  <body>
+  <body id="body">
     <?php $this->beginBody(); ?>
 
     <div class="wrap">
       <?php
-      if (!Yii::$app->user->isGuest) {
-        echo $this->render('/admin/nav');
-      }
+      // if (!Yii::$app->user->isGuest) {
+      //   echo $this->render('/admin/nav');
+      // }
 
-      echo $this->render('/app/nav');
+      if (!Yii::$app->user->isGuest) {
+        echo $this->render('/app/nav');
+      }
       ?>
 
       <div class="container">
-        <?php
-        echo Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]);
-        echo Alert::widget();
-        echo $content;
-        ?>
+        <?= $content; ?>
       </div><!-- /.container -->
     </div><!-- /.wrap -->
 
