@@ -38,9 +38,6 @@ class QuizController extends Controller
       ->orderBy(['question_id' => SORT_ASC])
       ->all();
 
-    // print_r($query);
-    // die();
-
     $dataProvider = new ArrayDataProvider(['allModels' => $query]);
 
     return $this->render('view', ['dataProvider' => $dataProvider]);
@@ -48,7 +45,7 @@ class QuizController extends Controller
 
   public function actionCreate()
   {
-    return 'create';
+    return $this->render('create');
   }
 
   public function actionEdit()

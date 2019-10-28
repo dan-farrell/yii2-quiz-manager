@@ -44,7 +44,7 @@ $actions = [
 <div class="row">
   <div class="col-md-12">
     <?php if (Yii::$app->user->identity->permission === 'edit') {
-      echo Html::button('Create Quiz', ['class' => 'float-right']);
+      echo Html::a('Create Quiz', ['/quiz/create'], ['class'=>'btn btn-primary float-right']);
     } ?>
   </div>
 </div>

@@ -10,14 +10,6 @@ $profile = Profile::find()
   ->where(['name' => Yii::$app->user->identity->username])
   ->one();
 
-if (Yii::$app->user->identity->permission === 'edit') {
-  echo 'edit';
-} else if (Yii::$app->user->identity->permission === 'view') {
-  echo 'view';
-} else {
-  echo 'restricted';
-}
-
 // $things = [
 //   [
 //     'foo' => 5.5,

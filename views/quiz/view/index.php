@@ -9,12 +9,12 @@ $query = Answer::find()
 
 ?>
 
-<div style="margin: 15px 0">
+<li style="padding: 15px 0; border-bottom: 1px solid black;">
   <?= $model->name; ?>
 
-  <ol type = "A">
+  <ol type="A">
     <?php foreach ($query as $item) { ?>
       <li><?= $item->answer; ?></li>
     <?php } ?>
   </ol>
-</div>
+</li>

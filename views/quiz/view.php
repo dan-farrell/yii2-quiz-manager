@@ -2,10 +2,7 @@
 
 use yii\widgets\ListView;
 
-// quiz title goes here
-
-// print_r($dataProvider);
-// die();
+// Quiz title goes here
 
 echo ListView::widget([
   'dataProvider' => $dataProvider,
@@ -13,5 +10,9 @@ echo ListView::widget([
   'itemView' => function ($model, $key, $index, $widget) {
     return $this->render('view/index',['model' => $model]);
   },
+  'options' => [
+    'tag' => 'ol',
+  ],
+  'layout' => '{items}'
 ]);
 
