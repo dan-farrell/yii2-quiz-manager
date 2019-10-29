@@ -6,13 +6,10 @@ use yii\widgets\ListView;
 
 echo ListView::widget([
   'dataProvider' => $dataProvider,
-  'itemView' => 'view/index',
   'itemView' => function ($model, $key, $index, $widget) {
     return $this->render('view/index',['model' => $model]);
   },
-  'options' => [
-    'tag' => 'ol',
-  ],
+  'options' => ['tag' => 'ol'],
   'layout' => '{items}'
 ]);
 

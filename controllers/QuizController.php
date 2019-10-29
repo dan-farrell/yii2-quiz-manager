@@ -31,10 +31,10 @@ class QuizController extends Controller
     return $this->render('index', ['dataProvider' => $dataProvider]);
   }
 
-  public function actionView()
+  public function actionView($id)
   {
     $query = Question::find()
-      ->andWhere(['quiz_id' => '2'])
+      ->andWhere(['quiz_id' => $id])
       ->orderBy(['question_id' => SORT_ASC])
       ->all();
 
@@ -53,9 +53,21 @@ class QuizController extends Controller
     return 'edit';
   }
 
-  public function actionDelete()
+  public function actionDelete($id)
   {
-    return 'delete';
+    $question = Question::find()
+      ->andWhere(['quiz_id' => $id])
+      ->all();
+
+    $question->delete();
+
+    $quiz = Quiz::find()
+      ->where(['quiz_id' => $id])
+      ->one();
+
+    $quiz->delete();
+
+    return $this->redirect(['index']);
   }
 
 }
