@@ -5,7 +5,9 @@
 @import "classes.scss";
 
 // Components
+@import "components/buttons.scss";
 @import "components/nav.scss";
 
 // Pages
 @import "pages/login.scss";
+@import "pages/index.scss";

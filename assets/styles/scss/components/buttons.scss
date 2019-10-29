@@ -1,0 +1,42 @@
+// Buttons
+.btn {
+  transition: linear .1s;
+}
+
+.btn-primary {
+  background-color: $blue;
+  border: 2px solid $blue;
+  border-radius: 0;
+  color: $white;
+  padding: 10px 15px;
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid $blue;
+    color: $blue;
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid $blue;
+  border-radius: 0;
+  color: $blue;
+  padding: 10px 15px;
+
+  &:hover {
+    background-color: $blue;
+    border: 2px solid $blue;
+    color: $white;
+  }
+}
+
+.icon-btn {
+  background-color: $blue;
+  border-radius: 0;
+  color: $white;
+
+  &:hover {
+    color: $grey;
+  }
+}

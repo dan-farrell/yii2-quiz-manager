@@ -1,5 +1,26 @@
+.float-left {
+  float: left; }
+
 .float-right {
   float: right; }
+
+.mb-15 {
+  margin-bottom: 15px; }
+
+.mr-15 {
+  margin-right: 15px; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.btn {
+  transition: linear .1s; }
 
 .btn-primary {
   background-color: #3f8cfb;
@@ -23,6 +44,13 @@
     border: 2px solid #3f8cfb;
     color: #fff; }
 
+.icon-btn {
+  background-color: #3f8cfb;
+  border-radius: 0;
+  color: #fff; }
+  .icon-btn:hover {
+    color: #333; }
+
 .navbar {
   border-radius: 0; }
 
@@ -42,6 +70,9 @@
   box-shadow: 0px 0px 125px -50px rgba(0, 0, 0, 0.75); }
   .site-login .btn {
     width: 100%; }
+
+a {
+  color: #3f8cfb; }
 
 .profile img {
   border-radius: 100%;

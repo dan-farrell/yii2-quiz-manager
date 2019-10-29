@@ -7,38 +7,6 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\helpers\Url;
 
-$actions = [
-  'class' => ActionColumn::className(),
-  'header' => 'Actions',
-  'buttons' => [
-    'view' => function ($url, $model) {
-      return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, ['title' => Yii::t('app', 'lead-view'),]);
-    },
-
-    'update' => function ($url, $model) {
-      return Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url, ['title' => Yii::t('app', 'lead-update')]);
-    },
-    'delete' => function ($url, $model) {
-      return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, ['title' => Yii::t('app', 'lead-delete')]);
-    }
-
-  ],
-  'urlCreator' => function ($action, $model, $key, $index) {
-    if ($action === 'view') {
-      $url = Url::to(['quiz/view', 'id' => $model->quiz_id]);
-      return $url;
-    }
-    // if ($action === 'update') {
-    //   $url ='index.php?r=client-login/lead-update&id='.$model->quiz_id;
-    //   return $url;
-    // }
-    if ($action === 'delete') {
-      $url = Url::to(['quiz/delete', 'id' => $model->quiz_id]);
-      return $url;
-    }
-  }
-];
-
 ?>
 
 <div class="row">
@@ -55,7 +23,32 @@ $actions = [
       'dataProvider' => $dataProvider,
       'columns' => [
         'name',
-        $actions,
+        [
+          'class' => ActionColumn::className(),
+          'header' => 'Actions',
+          'headerOptions' => ['style' => 'width:20%'],
+          'buttons' => [
+            'view' => function ($url, $model) {
+              return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url = Url::to(['quiz/view', 'id' => $model->quiz_id]), [
+                'class' => 'btn icon-btn',
+                'title' => Yii::t('app', 'View Quiz'),
+              ]);
+            },
+
+            'update' => function ($url, $model) {
+              return Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url = Url::to(['quiz/edit', 'id' => $model->quiz_id]), [
+                'class' => 'btn icon-btn',
+                'title' => Yii::t('app', 'Edit Quiz'),
+              ]);
+            },
+            'delete' => function ($url, $model) {
+              return Html::a('<span class="glyphicon glyphicon-trash"></span>', Url::to(['quiz/delete', 'id' => $model->quiz_id]), [
+                'class' => 'btn icon-btn',
+                'title' => Yii::t('app', 'Delete Quiz'),
+              ]);
+            }
+          ]
+        ],
       ],
     ]); ?>
   </div>
