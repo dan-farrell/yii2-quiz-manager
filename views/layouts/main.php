@@ -32,27 +32,18 @@ $this->beginPage();
     <?php $this->beginBody(); ?>
 
     <div class="wrap">
-      <?php
-      // if (!Yii::$app->user->isGuest) {
-      //   echo $this->render('/admin/nav');
-      // }
-
-      if (!Yii::$app->user->isGuest) {
+      <?php if (!Yii::$app->user->isGuest) {
         echo $this->render('/app/nav');
-      }
-      ?>
+      } ?>
 
       <div class="container">
         <?= $content; ?>
       </div><!-- /.container -->
     </div><!-- /.wrap -->
 
-    <footer class="footer">
-      <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y'); ?></p>
-        <p class="pull-right"><?= Yii::powered(); ?></p>
-      </div><!-- /.container -->
-    </footer><!-- /.footer -->
+    <?php if (!Yii::$app->user->isGuest) {
+      echo $this->render('/app/footer');
+    } ?>
 
     <?php $this->endBody(); ?>
   </body><!-- /body -->

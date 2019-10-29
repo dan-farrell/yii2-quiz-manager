@@ -1,6 +1,27 @@
-.profile img {
-  border-radius: 100%;
-  width: 200px; }
+.float-right {
+  float: right; }
+
+.btn-primary {
+  background-color: #3f8cfb;
+  border: 2px solid #3f8cfb;
+  border-radius: 0;
+  color: #fff;
+  padding: 10px 15px; }
+  .btn-primary:hover {
+    background-color: transparent;
+    border: 2px solid #3f8cfb;
+    color: #3f8cfb; }
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #3f8cfb;
+  border-radius: 0;
+  color: #3f8cfb;
+  padding: 10px 15px; }
+  .btn-secondary:hover {
+    background-color: #3f8cfb;
+    border: 2px solid #3f8cfb;
+    color: #fff; }
 
 .navbar {
   border-radius: 0; }
@@ -13,7 +34,17 @@
     padding-top: 5px;
     padding-bottom: 5px; }
 
-.float-right {
-  float: right; }
+.site-login {
+  background-color: white;
+  padding: 30px;
+  -webkit-box-shadow: 0px 0px 125px -50px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 125px -50px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 125px -50px rgba(0, 0, 0, 0.75); }
+  .site-login .btn {
+    width: 100%; }
+
+.profile img {
+  border-radius: 100%;
+  width: 200px; }
 
 /*# sourceMappingURL=main.css.map */
