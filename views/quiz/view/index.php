@@ -9,7 +9,7 @@ $query = Answer::find()
 
 ?>
 
-<li style="padding: 15px 0; border-bottom: 1px solid black;">
+<li class="question-list-item">
   <?= $model->name; ?>
 
   <?php if (Yii::$app->user->identity->permission !== 'restricted') { ?>

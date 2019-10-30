@@ -80,6 +80,17 @@
     box-shadow: none;
     width: 100%; }
 
+.question-table .question-table-actions {
+  width: 25%; }
+
+.question-list {
+  padding-inline-start: 20px; }
+  .question-list .question-list-item {
+    margin-bottom: 15px; }
+
+.quiz-table .quiz-table-actions {
+  width: 25%; }
+
 .quiz-table .btn {
   box-shadow: none; }
 

@@ -4,4 +4,4 @@
 
 $this->title = 'Index';
 
-echo $this->render('/app/index-nav');
+echo 'Hello world!';

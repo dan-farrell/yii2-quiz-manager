@@ -44,7 +44,7 @@ if (Yii::$app->user->identity->permission === 'edit') {
         [
           'class' => ActionColumn::className(),
           'header' => 'Actions',
-          'headerOptions' => ['style' => 'width: 15%;'],
+          'headerOptions' => ['class' => 'quiz-table-actions'],
           'buttons' => [
             'view' => function ($url, $model) {
               return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', Url::to(['quiz/view', 'id' => $model->quiz_id]), [

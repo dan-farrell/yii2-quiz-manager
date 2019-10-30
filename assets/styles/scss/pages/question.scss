@@ -1,0 +1,9 @@
+.question-table .question-table-actions { width: 25%; }
+
+.question-list {
+  padding-inline-start: 20px;
+
+  .question-list-item {
+    margin-bottom: $gutter-width/2;
+  }
+}

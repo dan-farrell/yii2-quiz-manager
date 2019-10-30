@@ -1,19 +1,2 @@
-// .quiz-table {
-//   .table {
-//     tbody {
-//       tr {
-//         td {
-//           &:nth-child(2) {
-//             text-align: center;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-.quiz-table {
-  .btn {
-    box-shadow: none;
-  }
-}
+.quiz-table .quiz-table-actions { width: 25%; }
+.quiz-table .btn { box-shadow: none; }

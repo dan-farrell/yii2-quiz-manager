@@ -6,12 +6,7 @@ use yii\bootstrap\NavBar;
 use yii\helpers\Html;
 
 // Array containing navigation options
-$navItems = [
-  // ['label' => 'Home', 'url' => ['/site/index']],
-  ['label' => 'About', 'url' => ['/site/about']],
-  ['label' => 'Quiz', 'url' => ['/quiz/index']],
-  // ['label' => 'Contact', 'url' => ['/site/contact']]
-];
+$navItems = [['label' => 'Quiz', 'url' => ['/quiz/index']]];
 
 // Blank array for the admin menu items
 $adminMenu = [];
@@ -25,7 +20,6 @@ if (Yii::$app->user->isGuest) {
   $adminItems = '<li class="dropdown">
     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account ('.Yii::$app->user->identity->username.')</a>'.Dropdown::widget([
       'items' => [
-        ['label' => 'Profile', 'url' => ['/profile/index']],
         '<li>'.Html::beginForm(['/site/logout'], 'post').Html::submitButton('Logout', ['class' => 'btn btn-link logout']).Html::endForm().'</li>',
       ],
     ]);

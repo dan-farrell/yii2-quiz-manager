@@ -25,6 +25,11 @@ class QuestionController extends Controller
     return $this->redirect(['quiz/index']);
   }
 
+  public function actionUpdate($id)
+  {
+
+  }
+
   public function actionDelete($id)
   {
     // $answer = Answer::find()
