@@ -23,12 +23,17 @@ class QuizController extends Controller
   public function actionIndex()
   {
     $query = Quiz::find()
-      ->orderBy(['quiz_id' => SORT_ASC])
+      ->orderBy(['quiz_id' => SORT_DESC])
       ->all();
 
     $dataProvider = new ArrayDataProvider(['allModels' => $query]);
 
-    return $this->render('index', ['dataProvider' => $dataProvider]);
+    $quiz = new Quiz();
+
+    return $this->render('index', [
+      'dataProvider' => $dataProvider,
+      'quiz' => $quiz,
+    ]);
   }
 
   public function actionView($id)
@@ -56,7 +61,7 @@ class QuizController extends Controller
     $quiz->load($_POST);
     $quiz->save();
 
-    return $this->render('create');
+    return $this->redirect(['quiz/index']);
   }
 
   public function actionEdit($id)

@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 
       <div class="modal-body">
         <!-- Form fields to edit the data before updating the database -->
-        <?php // $form->field($model, 'place');?>
+        <?= $form->field($quiz, 'name');?>
       </div><!-- /.modal-body -->
 
       <div class="modal-footer">
