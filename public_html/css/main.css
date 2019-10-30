@@ -20,36 +20,43 @@
   text-align: right; }
 
 .btn {
-  transition: linear .1s; }
+  border: 0;
+  border-radius: 0;
+  padding: 10px 15px;
+  transition: linear .1s;
+  -webkit-box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.75); }
+  .btn:active, .btn:focus {
+    background-color: #3f8cfb !important;
+    border: 0 !important;
+    color: #fff !important;
+    outline: none !important;
+    -webkit-box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.75) !important;
+    -moz-box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.75) !important;
+    box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.75) !important; }
+  .btn:hover {
+    border: 0; }
+  .btn.btn-back .glyphicon-chevron-left {
+    margin-right: 10px;
+    font-size: 12px; }
 
 .btn-primary {
   background-color: #3f8cfb;
-  border: 2px solid #3f8cfb;
-  border-radius: 0;
-  color: #fff;
-  padding: 10px 15px; }
+  color: #fff; }
   .btn-primary:hover {
-    background-color: transparent;
-    border: 2px solid #3f8cfb;
-    color: #3f8cfb; }
+    background-color: #fff;
+    color: #333; }
 
 .btn-secondary {
-  background-color: transparent;
-  border: 2px solid #3f8cfb;
-  border-radius: 0;
-  color: #3f8cfb;
-  padding: 10px 15px; }
+  background-color: #fff;
+  color: #333; }
   .btn-secondary:hover {
     background-color: #3f8cfb;
-    border: 2px solid #3f8cfb;
     color: #fff; }
 
-.icon-btn {
-  background-color: #3f8cfb;
-  border-radius: 0;
-  color: #fff; }
-  .icon-btn:hover {
-    color: #333; }
+.btn-rounded {
+  border-radius: 30px; }
 
 .navbar {
   border-radius: 0; }
@@ -63,19 +70,29 @@
     padding-bottom: 5px; }
 
 .site-login {
-  background-color: white;
+  background-color: #fff;
   padding: 30px;
+  margin-top: 45px;
   -webkit-box-shadow: 0px 0px 125px -50px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 125px -50px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 125px -50px rgba(0, 0, 0, 0.75); }
   .site-login .btn {
+    box-shadow: none;
     width: 100%; }
+
+.quiz-table .btn {
+  box-shadow: none; }
 
 a {
   color: #3f8cfb; }
+  a:hover {
+    color: #3f8cfb; }
 
 .profile img {
   border-radius: 100%;
   width: 200px; }
+
+.wrap > .container {
+  padding-top: 30px !important; }
 
 /*# sourceMappingURL=main.css.map */

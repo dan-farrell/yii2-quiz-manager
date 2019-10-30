@@ -1,10 +1,14 @@
 .site-login {
-  background-color: white;
-  padding: 30px;
+  background-color: $white;
+  padding: $gutter-width;
+  margin-top: $gutter-width*1.5;
 
   -webkit-box-shadow: 0px 0px 125px -50px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 125px -50px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 125px -50px rgba(0,0,0,0.75);
 
-  .btn { width: 100%; }
+  .btn {
+    box-shadow: none;
+    width: 100%;
+  }
 }

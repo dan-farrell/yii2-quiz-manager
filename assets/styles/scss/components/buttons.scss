@@ -1,42 +1,54 @@
 // Buttons
 .btn {
+  border: 0;
+  border-radius: 0;
+  padding: $gutter-width/3 $gutter-width/2;
   transition: linear .1s;
+
+  -webkit-box-shadow: $btnBoxShadow;
+  -moz-box-shadow: $btnBoxShadow;
+  box-shadow: $btnBoxShadow;
+
+  &:active,
+  &:focus {
+    background-color: $blue !important;
+    border: 0 !important;
+    color: $white !important;
+    outline: none !important;
+
+    -webkit-box-shadow: $btnBoxShadow !important;
+    -moz-box-shadow: $btnBoxShadow !important;
+    box-shadow: $btnBoxShadow !important;
+  }
+
+  &:hover { border: 0; }
+
+  &.btn-back {
+    .glyphicon-chevron-left {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+  }
 }
 
 .btn-primary {
   background-color: $blue;
-  border: 2px solid $blue;
-  border-radius: 0;
   color: $white;
-  padding: 10px 15px;
 
   &:hover {
-    background-color: transparent;
-    border: 2px solid $blue;
-    color: $blue;
+    background-color: $white;
+    color: $grey;
   }
 }
 
 .btn-secondary {
-  background-color: transparent;
-  border: 2px solid $blue;
-  border-radius: 0;
-  color: $blue;
-  padding: 10px 15px;
+  background-color: $white;
+  color: $grey;
 
   &:hover {
     background-color: $blue;
-    border: 2px solid $blue;
     color: $white;
   }
 }
 
-.icon-btn {
-  background-color: $blue;
-  border-radius: 0;
-  color: $white;
-
-  &:hover {
-    color: $grey;
-  }
-}
+.btn-rounded { border-radius: $gutter-width; }

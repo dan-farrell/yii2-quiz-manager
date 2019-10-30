@@ -2,6 +2,10 @@
 
 a {
   color: $blue;
+
+  &:hover {
+    color: $blue;
+  }
 }
 
 .profile {
@@ -9,4 +13,8 @@ a {
     border-radius: 100%;
     width: 200px;
   }
+}
+
+.wrap > .container {
+  padding-top: $gutter-width !important;
 }

@@ -52,6 +52,10 @@ class QuizController extends Controller
 
   public function actionCreate()
   {
+    $quiz = new Quiz();
+    $quiz->load($_POST);
+    $quiz->save();
+
     return $this->render('create');
   }
 

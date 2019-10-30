@@ -8,14 +8,20 @@ use yii\widgets\ListView;
 
 <div class="row mb-15">
   <div class="col-md-6 text-left">
-    <h3><?= $title; ?></h3>
+    <?= Html::a('<span class="glyphicon glyphicon-chevron-left"></span>Back', Url::to(['quiz/index']), ['class'=>'btn btn-primary btn-rounded btn-back']); ?>
   </div>
 
   <div class="col-md-6 text-right">
     <?php if (Yii::$app->user->identity->permission === 'edit') {
-      echo Html::a('Delete Quiz', Url::to(['quiz/delete', 'id' => $quizId]), ['class'=>'btn btn-secondary mr-15']);
-      echo Html::a('Edit Quiz', Url::to(['quiz/edit', 'id' => $quizId]), ['class'=>'btn btn-primary']);
+      echo Html::a('Delete Quiz', Url::to(['quiz/delete', 'id' => $quizId]), ['class'=>'btn btn-secondary btn-rounded mr-15']);
+      echo Html::a('Edit Quiz', Url::to(['quiz/edit', 'id' => $quizId]), ['class'=>'btn btn-primary btn-rounded']);
     } ?>
+  </div>
+</div>
+
+<div class="row mb-15">
+  <div class="col-md-12 text-left">
+    <h3><?= $title; ?></h3>
   </div>
 </div>
 

@@ -1,6 +1,6 @@
 <?php
 
-$name = 'My Company';
+$name = 'Quiz Manager';
 
 ?>
 
