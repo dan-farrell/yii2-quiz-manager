@@ -6,12 +6,12 @@ use yii\widgets\ActiveForm;
 ?>
 
 <!-- Modal -->
-<div class="modal fade" id="editQuestion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="addQuestion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <?php $form = ActiveForm::begin([
         'id' => 'question',
-        'action' => ['question/edit'],
+        'action' => ['question/create'],
         'options' => [
           'role' => 'form',
           'class' => 'quiz-form',
@@ -20,12 +20,15 @@ use yii\widgets\ActiveForm;
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Edit Question '<?= $title; ?>'</h4>
+        <h4 class="modal-title" id="myModalLabel">New Question</h4>
       </div><!-- /.modal-header -->
 
       <div class="modal-body">
         <!-- Form fields to edit the data before updating the database -->
-        <?php // $form->field($model, 'name');?>
+        <?php
+        echo $form->field($question, 'name');
+        echo $form->field($question, 'quiz_id')->hiddenInput(['value' => $quizId])->label(false);;
+        ?>
       </div><!-- /.modal-body -->
 
       <div class="modal-footer">

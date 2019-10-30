@@ -33,13 +33,4 @@ class Quiz extends \yii\db\ActiveRecord
     ];
   }
 
-  public function insertFormData()
-  {
-    $quiz = new Quiz();
-    $quiz->name = $this->name;
-    $quiz->save;
-
-    return $form->save();
-  }
-
 }

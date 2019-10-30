@@ -76,10 +76,13 @@ class QuizController extends Controller
 
     $dataProvider = new ArrayDataProvider(['allModels' => $query]);
 
+    $question = new Question();
+
     return $this->render('edit', [
       'dataProvider' => $dataProvider,
       'title' => $title,
       'quizId' => $id,
+      'question' => $question,
     ]);
   }
 

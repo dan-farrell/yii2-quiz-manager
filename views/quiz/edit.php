@@ -31,7 +31,14 @@ $questionTitle = 'red';
 
   <div class="col-md-6 text-right">
     <?php if (Yii::$app->user->identity->permission === 'edit') {
-      echo Html::a('Add Question', Url::to(['question/add']), ['class'=>'btn btn-primary btn-rounded']);
+      // echo Html::a('Add Question', Url::to(['question/add']), ['class'=>'btn btn-primary btn-rounded']);
+
+      echo Html::tag('button', 'Add Question', [
+        'type' => 'button',
+        'class' => 'btn btn-primary btn-rounded',
+        'data-toggle' => 'modal',
+        'data-target' => '#addQuestion',
+      ]);
     } ?>
   </div>
 </div>
@@ -71,5 +78,8 @@ $questionTitle = 'red';
 </div>
 
 <?php if (Yii::$app->user->identity->permission === 'edit') {
-  echo $this->render('/quiz/components/modal-edit',['title' => $questionTitle]);
+  echo $this->render('/quiz/components/modal-edit', [
+    'question' => $question,
+    'quizId' => $quizId,
+  ]);
 }?>

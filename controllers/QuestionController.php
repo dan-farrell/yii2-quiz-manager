@@ -16,14 +16,14 @@ use app\models\Quiz;
 class QuestionController extends Controller
 {
 
-  // public function actionCreate()
-  // {
-  //   $quiz = new Question();
-  //   $quiz->load($_POST);
-  //   $quiz->save();
+  public function actionCreate()
+  {
+    $question = new Question();
+    $question->load($_POST);
+    $question->save();
 
-  //   return $this->render('create');
-  // }
+    return $this->redirect(['quiz/index']);
+  }
 
   public function actionDelete($id)
   {
