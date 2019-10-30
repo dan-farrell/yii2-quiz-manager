@@ -1,11 +1,75 @@
 <?php
 
-echo 'edit';
+use yii\bootstrap\Html;
+use yii\grid\ActionColumn;
+use yii\grid\GridView;
+use yii\helpers\Url;
 
-// delete quiz
+$this->title = 'Quiz Manager - Edit - '.$title;
 
-// edit title
+$questionTitle = 'red';
 
-// edit questions
+?>
 
-// delete questions
+<div class="row mb-15">
+  <div class="col-md-6 text-left">
+    <?= Html::a('<span class="glyphicon glyphicon-chevron-left"></span>Back', Url::to(['quiz/index']), ['class'=>'btn btn-primary btn-rounded btn-back']); ?>
+  </div>
+
+  <div class="col-md-6 text-right">
+    <?php if (Yii::$app->user->identity->permission === 'edit') {
+      echo Html::a('Delete Quiz', Url::to(['quiz/delete', 'id' => $quizId]), ['class'=>'btn btn-secondary btn-rounded mr-15']);
+      echo Html::a('View Quiz', Url::to(['quiz/view', 'id' => $quizId]), ['class'=>'btn btn-primary btn-rounded']);
+    } ?>
+  </div>
+</div>
+
+<div class="row mb-15">
+  <div class="col-md-6 text-left">
+    <h3><?= $title; ?></h3>
+  </div>
+
+  <div class="col-md-6 text-right">
+    <?php if (Yii::$app->user->identity->permission === 'edit') {
+      echo Html::a('Add Question', Url::to(['question/add']), ['class'=>'btn btn-primary btn-rounded']);
+    } ?>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <?= GridView::widget([
+      'dataProvider' => $dataProvider,
+      'options' => ['class' => 'question-table'],
+      'columns' => [
+        'name',
+        [
+          'class' => ActionColumn::className(),
+          'header' => 'Actions',
+          'headerOptions' => ['style' => 'width: 15%;'],
+          'buttons' => [
+            'update' => function ($url, $model) {
+              return Html::tag('button', '<span class="glyphicon glyphicon-pencil"></span>', [
+                'type' => 'button',
+                'class' => 'btn btn-primary btn-rounded',
+                'data-toggle' => 'modal',
+                'data-target' => '#editQuestion',
+              ]);
+            },
+            'delete' => function ($url, $model) {
+              return Html::a('<span class="glyphicon glyphicon-trash"></span>', Url::to(['question/delete', 'id' => $model->question_id]), [
+                'class' => 'btn btn-primary btn-rounded',
+                'title' => Yii::t('app', 'Delete Question'),
+              ]);
+            },
+          ],
+          'template' => '{update} {delete}',
+        ],
+      ],
+    ]); ?>
+  </div>
+</div>
+
+<?php if (Yii::$app->user->identity->permission === 'edit') {
+  echo $this->render('/quiz/components/modal-edit',['title' => $questionTitle]);
+}?>

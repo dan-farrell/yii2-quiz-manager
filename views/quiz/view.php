@@ -4,6 +4,8 @@ use yii\bootstrap\Html;
 use yii\helpers\Url;
 use yii\widgets\ListView;
 
+$this->title = 'Quiz Manager - View - '.$title;
+
 ?>
 
 <div class="row mb-15">
@@ -13,7 +15,7 @@ use yii\widgets\ListView;
 
   <div class="col-md-6 text-right">
     <?php if (Yii::$app->user->identity->permission === 'edit') {
-      echo Html::a('Delete Quiz', Url::to(['quiz/delete', 'id' => $quizId]), ['class'=>'btn btn-secondary btn-rounded mr-15']);
+      // echo Html::a('Delete Quiz', Url::to(['quiz/delete', 'id' => $quizId]), ['class'=>'btn btn-secondary btn-rounded mr-15']);
       echo Html::a('Edit Quiz', Url::to(['quiz/edit', 'id' => $quizId]), ['class'=>'btn btn-primary btn-rounded']);
     } ?>
   </div>

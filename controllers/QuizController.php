@@ -33,7 +33,7 @@ class QuizController extends Controller
 
   public function actionView($id)
   {
-    $title = $this->getQuizTitle();
+    $title = $this->getQuizTitle($id);
     $quizId = $id;
 
     $query = Question::find()
@@ -59,19 +59,27 @@ class QuizController extends Controller
     return $this->render('create');
   }
 
-  public function actionEdit()
+  public function actionEdit($id)
   {
-    return 'edit';
+    $title = $this->getQuizTitle($id);
+    $quizId = $id;
+
+    $query = Question::find()
+      ->andWhere(['quiz_id' => $id])
+      ->orderBy(['question_id' => SORT_ASC])
+      ->all();
+
+    $dataProvider = new ArrayDataProvider(['allModels' => $query]);
+
+    return $this->render('edit', [
+      'dataProvider' => $dataProvider,
+      'title' => $title,
+      'quizId' => $id,
+    ]);
   }
 
   public function actionDelete($id)
   {
-    // $question = Question::find()
-    //   ->where(['quiz_id' => $id])
-    //   ->all();
-
-    // $question->delete();
-
     $quiz = Quiz::find()
       ->where(['quiz_id' => $id])
       ->one();
@@ -81,9 +89,15 @@ class QuizController extends Controller
     return $this->redirect(['index']);
   }
 
-  public function getQuizTitle()
+  public function getQuizTitle($id)
   {
-    return 'Quiz Title';
+    $query = Quiz::find()
+      ->andWhere(['quiz_id' => $id])
+      ->all();
+
+    foreach ($query as $item) {
+      return $item['name'];
+    }
   }
 
 }

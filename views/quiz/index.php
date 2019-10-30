@@ -73,5 +73,5 @@ if (Yii::$app->user->identity->permission === 'edit') {
 </div>
 
 <?php if (Yii::$app->user->identity->permission === 'edit') {
-  echo $this->render('/quiz/components/modal');
+  echo $this->render('/quiz/components/modal-create');
 }?>
