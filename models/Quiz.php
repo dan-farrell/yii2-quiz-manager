@@ -10,6 +10,9 @@ use app\models\Question;
 class Quiz extends \yii\db\ActiveRecord
 {
 
+  /**
+   *
+   */
   public function rules()
   {
     return [
@@ -25,6 +28,9 @@ class Quiz extends \yii\db\ActiveRecord
     return 'quiz';
   }
 
+  /**
+   *
+   */
   public function attributeLabels()
   {
     return [

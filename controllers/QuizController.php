@@ -34,6 +34,9 @@ class QuizController extends Controller
     ]);
   }
 
+  /**
+   *
+   */
   public function actionView($id)
   {
     $title = $this->getQuizTitle($id);
@@ -53,6 +56,9 @@ class QuizController extends Controller
     ]);
   }
 
+  /**
+   *
+   */
   public function actionCreate()
   {
     $quiz = new Quiz();
@@ -62,6 +68,9 @@ class QuizController extends Controller
     return $this->redirect(['quiz/index']);
   }
 
+  /**
+   *
+   */
   public function actionEdit($id)
   {
     $title = $this->getQuizTitle($id);
@@ -84,6 +93,9 @@ class QuizController extends Controller
     ]);
   }
 
+  /**
+   *
+   */
   public function actionDelete($id)
   {
     $quiz = Quiz::find()
@@ -95,6 +107,9 @@ class QuizController extends Controller
     return $this->redirect(['index']);
   }
 
+  /**
+   *
+   */
   public function getQuizTitle($id)
   {
     $query = Quiz::find()

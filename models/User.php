@@ -6,151 +6,65 @@ use \yii\base\BaseObject;
 use \yii\db\ActiveRecord;
 use \yii\web\IdentityInterface;
 
-class User extends ActiveRecord implements IdentityInterface
-{
-
-    public static function findIdentity($id)
-    {
-        return static::findOne($id);
-    }
-
-    public static function findIdentityByAccessToken($token, $type = null)
-    {
-        throw new NotSupportedException();//I don't implement this method because I don't have any access token column in my database
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function getAuthKey()
-    {
-        return $this->authKey;//Here I return a value of my authKey column
-    }
-
-    public function validateAuthKey($authKey)
-    {
-        return $this->authKey === $authKey;
-    }
-
-    public static function findByUsername($username)
-    {
-        return self::findOne(['username'=>$username]);
-    }
-
-    public function validatePassword($password)
-    {
-        return $this->password === $password;
-    }
-}
-
 /**
  *
  */
-// class User extends BaseObject implements IdentityInterface
-// {
+class User extends ActiveRecord implements IdentityInterface
+{
 
-//     public $id;
+  /**
+   *
+   */
+  public static function findIdentity($id)
+  {
+    return static::findOne($id);
+  }
 
-//     public $username;
+  /**
+   *
+   */
+  public static function findIdentityByAccessToken($token, $type = null)
+  {
+    throw new NotSupportedException();//I don't implement this method because I don't have any access token column in my database
+  }
 
-//     public $password;
+  /**
+   *
+   */
+  public function getId()
+  {
+    return $this->id;
+  }
 
-//     public $authKey;
+  /**
+   *
+   */
+  public function getAuthKey()
+  {
+    return $this->authKey;//Here I return a value of my authKey column
+  }
 
-//     public $accessToken;
+  /**
+   *
+   */
+  public function validateAuthKey($authKey)
+  {
+    return $this->authKey === $authKey;
+  }
 
-//     private static $users = [
-//         '100' => [
-//             'id' => '100',
-//             'username' => 'admin',
-//             'password' => 'admin',
-//             'authKey' => 'test100key',
-//             'accessToken' => '100-token',
-//         ],
-//         '101' => [
-//             'id' => '101',
-//             'username' => 'demo',
-//             'password' => 'demo',
-//             'authKey' => 'test101key',
-//             'accessToken' => '101-token',
-//         ],
-//     ];
+  /**
+   *
+   */
+  public static function findByUsername($username)
+  {
+    return self::findOne(['username'=>$username]);
+  }
 
-
-//     /**
-//      * {@inheritdoc}
-//      */
-//     public static function findIdentity($id)
-//     {
-//         return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
-//     }
-
-//     /**
-//      * {@inheritdoc}
-//      */
-//     public static function findIdentityByAccessToken($token, $type = null)
-//     {
-//         foreach (self::$users as $user) {
-//             if ($user['accessToken'] === $token) {
-//                 return new static($user);
-//             }
-//         }
-
-//         return null;
-//     }
-
-//     /**
-//      * Finds user by username
-//      *
-//      * @param string $username
-//      * @return static|null
-//      */
-//     public static function findByUsername($username)
-//     {
-//         foreach (self::$users as $user) {
-//             if (strcasecmp($user['username'], $username) === 0) {
-//                 return new static($user);
-//             }
-//         }
-
-//         return null;
-//     }
-
-//     /**
-//      * {@inheritdoc}
-//      */
-//     public function getId()
-//     {
-//         return $this->id;
-//     }
-
-//     /**
-//      * {@inheritdoc}
-//      */
-//     public function getAuthKey()
-//     {
-//         return $this->authKey;
-//     }
-
-//     /**
-//      * {@inheritdoc}
-//      */
-//     public function validateAuthKey($authKey)
-//     {
-//         return $this->authKey === $authKey;
-//     }
-
-//     /**
-//      * Validates password
-//      *
-//      * @param string $password password to validate
-//      * @return bool if password provided is valid for current user
-//      */
-//     public function validatePassword($password)
-//     {
-//         return $this->password === $password;
-//     }
-
-// }
+  /**
+   *
+   */
+  public function validatePassword($password)
+  {
+    return $this->password === $password;
+  }
+}

@@ -8,6 +8,9 @@ namespace app\models;
 class Answer extends \yii\db\ActiveRecord
 {
 
+  /**
+   *
+   */
   public function rules()
   {
     return [
@@ -23,6 +26,9 @@ class Answer extends \yii\db\ActiveRecord
     return 'answer';
   }
 
+  /**
+   *
+   */
   public function attributeLabels()
   {
     return [

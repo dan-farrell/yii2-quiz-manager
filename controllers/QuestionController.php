@@ -13,6 +13,9 @@ use app\models\Question;
 class QuestionController extends Controller
 {
 
+  /**
+   *
+   */
   public function actionCreate()
   {
     $question = new Question();
@@ -22,6 +25,9 @@ class QuestionController extends Controller
     return $this->redirect(['quiz/index']);
   }
 
+  /**
+   *
+   */
   public function actionEdit($id)
   {
     $question = Question::find()
@@ -34,6 +40,9 @@ class QuestionController extends Controller
     ]);
   }
 
+  /**
+   *
+   */
   public function actionUpdate($id)
   {
     $question = Question::find()
@@ -46,6 +55,9 @@ class QuestionController extends Controller
     return $this->redirect(['quiz/index']);
   }
 
+  /**
+   *
+   */
   public function actionView($id)
   {
     $title = $this->getQuestionTitle($id);
@@ -68,6 +80,9 @@ class QuestionController extends Controller
     ]);
   }
 
+  /**
+   *
+   */
   public function actionDelete($id)
   {
     $question = Question::find()
@@ -79,6 +94,9 @@ class QuestionController extends Controller
     return $this->redirect(['quiz/index']);
   }
 
+  /**
+   *
+   */
   public function getQuestionTitle($id)
   {
     $query = Question::find()

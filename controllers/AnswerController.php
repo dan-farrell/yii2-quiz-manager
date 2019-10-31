@@ -7,11 +7,14 @@ use yii\web\Controller;
 use app\models\Answer;
 
 /**
- *
+ * AnswerController that is used to
  */
 class AnswerController extends Controller
 {
 
+  /**
+   *
+   */
   public function actionCreate()
   {
     $answer = new Answer();
@@ -21,6 +24,9 @@ class AnswerController extends Controller
     return $this->redirect(['quiz/index']);
   }
 
+  /**
+   *
+   */
   public function actionEdit($id)
   {
     $answer = Answer::find()
@@ -33,6 +39,9 @@ class AnswerController extends Controller
     ]);
   }
 
+  /**
+   *
+   */
   public function actionUpdate($id)
   {
     $answer = Answer::find()
@@ -45,6 +54,9 @@ class AnswerController extends Controller
     return $this->redirect(['quiz/index']);
   }
 
+  /**
+   *
+   */
   public function actionDelete($id)
   {
     $answer = Answer::find()
