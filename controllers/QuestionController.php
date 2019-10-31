@@ -25,9 +25,26 @@ class QuestionController extends Controller
     return $this->redirect(['quiz/index']);
   }
 
-  public function actionUpdate($id)
+  public function actionEdit($id)
   {
+    $title = $this->getQuestionTitle($id);
+    $questionId = $id;
 
+    $query = Answer::find()
+      ->andWhere(['question_id' => $id])
+      ->orderBy(['answer_id' => SORT_ASC])
+      ->all();
+
+    $dataProvider = new ArrayDataProvider(['allModels' => $query]);
+
+    $answer = new Answer();
+
+    return $this->render('edit', [
+      'dataProvider' => $dataProvider,
+      'title' => $title,
+      'questionId' => $id,
+      'answer' => $answer,
+    ]);
   }
 
   public function actionDelete($id)
@@ -45,6 +62,17 @@ class QuestionController extends Controller
     $question->delete();
 
     return $this->redirect(['quiz/index']);
+  }
+
+  public function getQuestionTitle($id)
+  {
+    $query = Question::find()
+      ->andWhere(['question_id' => $id])
+      ->all();
+
+    foreach ($query as $item) {
+      return $item['name'];
+    }
   }
 
 }
