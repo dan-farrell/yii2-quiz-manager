@@ -15,7 +15,6 @@ $this->title = 'Quiz Manager - View - '.$title;
 
   <div class="col-xs-6 text-right">
     <?php if (Yii::$app->user->identity->permission === 'edit') {
-      // echo Html::a('Delete Quiz', Url::to(['quiz/delete', 'id' => $quizId]), ['class'=>'btn btn-secondary btn-rounded mr-15']);
       echo Html::a('Edit Quiz', Url::to(['quiz/edit', 'id' => $quizId]), ['class'=>'btn btn-primary btn-rounded']);
     } ?>
   </div>

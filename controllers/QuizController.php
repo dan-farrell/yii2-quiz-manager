@@ -4,8 +4,6 @@ namespace app\controllers;
 
 use yii\data\ArrayDataProvider;
 use yii\web\Controller;
-
-// Models
 use app\models\Question;
 use app\models\Quiz;
 

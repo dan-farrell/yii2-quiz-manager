@@ -15,10 +15,10 @@ $this->title = 'Quiz Manager - Edit - '.$title;
   </div>
 
   <div class="col-xs-6 text-right">
-    <?php if (Yii::$app->user->identity->permission === 'edit') {
-      echo Html::a('Delete Quiz', Url::to(['quiz/delete', 'id' => $quizId]), ['class'=>'btn btn-secondary btn-rounded mr-15']);
-      echo Html::a('View Quiz', Url::to(['quiz/view', 'id' => $quizId]), ['class'=>'btn btn-primary btn-rounded']);
-    } ?>
+    <?php
+    echo Html::a('Delete Quiz', Url::to(['quiz/delete', 'id' => $quizId]), ['class'=>'btn btn-secondary btn-rounded mr-15']);
+    echo Html::a('View Quiz', Url::to(['quiz/view', 'id' => $quizId]), ['class'=>'btn btn-primary btn-rounded']);
+    ?>
   </div>
 </div>
 
@@ -28,16 +28,12 @@ $this->title = 'Quiz Manager - Edit - '.$title;
   </div>
 
   <div class="col-md-6 text-right">
-    <?php if (Yii::$app->user->identity->permission === 'edit') {
-      // echo Html::a('Add Question', Url::to(['question/add']), ['class'=>'btn btn-primary btn-rounded']);
-
-      echo Html::tag('button', 'Add Question', [
-        'type' => 'button',
-        'class' => 'btn btn-primary btn-rounded',
-        'data-toggle' => 'modal',
-        'data-target' => '#addQuestion',
-      ]);
-    } ?>
+    <?= Html::tag('button', 'Add Question', [
+      'type' => 'button',
+      'class' => 'btn btn-primary btn-rounded',
+      'data-toggle' => 'modal',
+      'data-target' => '#addQuestion',
+    ]); ?>
   </div>
 </div>
 
@@ -73,9 +69,7 @@ $this->title = 'Quiz Manager - Edit - '.$title;
   </div>
 </div>
 
-<?php if (Yii::$app->user->identity->permission === 'edit') {
-  echo $this->render('/quiz/components/modal-edit', [
-    'question' => $question,
-    'quizId' => $quizId,
-  ]);
-}?>
+<?= $this->render('/quiz/components/add-question', [
+  'question' => $question,
+  'quizId' => $quizId,
+]); ?>
