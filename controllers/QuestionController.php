@@ -49,12 +49,6 @@ class QuestionController extends Controller
 
   public function actionDelete($id)
   {
-    // $answer = Answer::find()
-    //   ->where(['question_id' => $id])
-    //   ->all();
-
-    // $answer->delete();
-
     $question = Question::find()
       ->where(['question_id' => $id])
       ->one();
