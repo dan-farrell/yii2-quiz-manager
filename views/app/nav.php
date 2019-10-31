@@ -33,7 +33,7 @@ array_push($adminMenu, $adminItems);
 $navItems = array_merge($navItems, $adminMenu);
 
 NavBar::begin([
-  'brandLabel' => 'Quiz Manager',
+  'brandLabel' => 'WebbiSkools Ltd',
   'brandUrl' => Yii::$app->homeUrl,
   // 'options' => ['class' => 'navbar-inverse navbar-fixed-top'],
   'options' => ['class' => 'navbar-inverse'],

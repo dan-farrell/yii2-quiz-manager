@@ -59,7 +59,19 @@
   border-radius: 30px; }
 
 .navbar {
-  border-radius: 0; }
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 8px 6px -6px #00000052;
+  color: #333; }
+  .navbar a {
+    color: #333 !important; }
+    .navbar a:hover {
+      color: #3f8cfb !important; }
+  .navbar li.active a,
+  .navbar li.dropdown.open a {
+    background-color: transparent !important;
+    color: #3f8cfb !important; }
 
 .admin-nav .navbar {
   height: 32px;
