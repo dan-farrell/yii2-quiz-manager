@@ -14,7 +14,9 @@ class QuestionController extends Controller
 {
 
   /**
+   * Create Question action.
    *
+   * @return redirect
    */
   public function actionCreate()
   {
@@ -26,7 +28,9 @@ class QuestionController extends Controller
   }
 
   /**
+   * Edit Question action.
    *
+   * @return string
    */
   public function actionEdit($id)
   {
@@ -41,7 +45,9 @@ class QuestionController extends Controller
   }
 
   /**
+   * Update Question in database action.
    *
+   * @return redirect
    */
   public function actionUpdate($id)
   {
@@ -56,7 +62,9 @@ class QuestionController extends Controller
   }
 
   /**
+   * View Question action.
    *
+   * @return string
    */
   public function actionView($id)
   {
@@ -81,7 +89,9 @@ class QuestionController extends Controller
   }
 
   /**
+   * Delete Question action.
    *
+   * @return redirect
    */
   public function actionDelete($id)
   {
@@ -95,7 +105,9 @@ class QuestionController extends Controller
   }
 
   /**
+   * Get Question title.
    *
+   * @return string
    */
   public function getQuestionTitle($id)
   {

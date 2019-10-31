@@ -35,7 +35,9 @@ class QuizController extends Controller
   }
 
   /**
+   * View Quiz action.
    *
+   * @return string
    */
   public function actionView($id)
   {
@@ -57,7 +59,9 @@ class QuizController extends Controller
   }
 
   /**
+   * Create Quiz action.
    *
+   * @return redirect
    */
   public function actionCreate()
   {
@@ -69,7 +73,9 @@ class QuizController extends Controller
   }
 
   /**
+   * Edit Quiz action.
    *
+   * @return string
    */
   public function actionEdit($id)
   {
@@ -94,7 +100,9 @@ class QuizController extends Controller
   }
 
   /**
+   * Delete Quiz action.
    *
+   * @return redirect
    */
   public function actionDelete($id)
   {
@@ -108,7 +116,9 @@ class QuizController extends Controller
   }
 
   /**
+   * Get Quiz title.
    *
+   * @return steing
    */
   public function getQuizTitle($id)
   {

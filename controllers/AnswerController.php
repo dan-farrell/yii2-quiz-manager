@@ -13,7 +13,9 @@ class AnswerController extends Controller
 {
 
   /**
+   * Create Answer action.
    *
+   * @return redirect
    */
   public function actionCreate()
   {
@@ -25,7 +27,9 @@ class AnswerController extends Controller
   }
 
   /**
+   * Edit Answer action.
    *
+   * @return string
    */
   public function actionEdit($id)
   {
@@ -40,7 +44,9 @@ class AnswerController extends Controller
   }
 
   /**
+   * Update Answer in database action.
    *
+   * @return redirect
    */
   public function actionUpdate($id)
   {
@@ -55,7 +61,9 @@ class AnswerController extends Controller
   }
 
   /**
+   * Delete Answer action.
    *
+   * @return redirect
    */
   public function actionDelete($id)
   {
