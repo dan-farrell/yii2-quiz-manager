@@ -4,11 +4,7 @@ namespace app\controllers;
 
 use yii\data\ArrayDataProvider;
 use yii\web\Controller;
-
-// Models
 use app\models\Answer;
-use app\models\Question;
-use app\models\Quiz;
 
 /**
  *
@@ -31,15 +27,10 @@ class AnswerController extends Controller
       ->where(['answer_id' => $id])
       ->one();
 
-    // $answer->load($_POST);
-    // $answer->save();
-
-    return $this->render('edit', [
+    return $this->render('edit-form', [
       'answer' => $answer,
       'id' => $id,
     ]);
-
-    // return $this->redirect(['quiz/index']);
   }
 
   public function actionUpdate($id)
@@ -50,11 +41,6 @@ class AnswerController extends Controller
 
     $answer->load($_POST);
     $answer->save();
-
-    // return $this->render('edit', [
-    //   'answer' => $answer,
-    //   'id' => $id,
-    // ]);
 
     return $this->redirect(['quiz/index']);
   }
