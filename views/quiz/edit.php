@@ -49,6 +49,12 @@ $this->title = 'Quiz Manager - Edit - '.$title;
           'header' => 'Actions',
           'headerOptions' => ['class' => 'question-table-actions'],
           'buttons' => [
+            'view' => function ($url, $model) {
+              return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', Url::to(['question/view', 'id' => $model->question_id]), [
+                'class' => 'btn btn-primary btn-rounded',
+                'title' => Yii::t('app', 'View Answers'),
+              ]);
+            },
             'update' => function ($url, $model) {
               return Html::a('<span class="glyphicon glyphicon-pencil"></span>', Url::to(['question/edit', 'id' => $model->question_id]), [
                 'class' => 'btn btn-primary btn-rounded',
@@ -62,7 +68,7 @@ $this->title = 'Quiz Manager - Edit - '.$title;
               ]);
             },
           ],
-          'template' => '{update} {delete}',
+          'template' => '{view} {update} {delete}',
         ],
       ],
     ]); ?>

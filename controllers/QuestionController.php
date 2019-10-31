@@ -24,6 +24,30 @@ class QuestionController extends Controller
 
   public function actionEdit($id)
   {
+    $question = Question::find()
+      ->where(['question_id' => $id])
+      ->one();
+
+    return $this->render('edit-form', [
+      'question' => $question,
+      'id' => $id,
+    ]);
+  }
+
+  public function actionUpdate($id)
+  {
+    $question = Question::find()
+      ->where(['question_id' => $id])
+      ->one();
+
+    $question->load($_POST);
+    $question->save();
+
+    return $this->redirect(['quiz/index']);
+  }
+
+  public function actionView($id)
+  {
     $title = $this->getQuestionTitle($id);
     $questionId = $id;
 
@@ -36,7 +60,7 @@ class QuestionController extends Controller
 
     $answer = new Answer();
 
-    return $this->render('edit', [
+    return $this->render('view', [
       'dataProvider' => $dataProvider,
       'title' => $title,
       'questionId' => $id,
