@@ -14,11 +14,9 @@ use yii\web\Controller;
 use yii\web\Response;
 use app\models\LoginForm;
 
-/**
- *
- */
 class SiteController extends Controller
 {
+
   /**
    * {@inheritdoc}
    */

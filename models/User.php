@@ -12,13 +12,13 @@ use \yii\db\ActiveRecord;
 use \yii\web\IdentityInterface;
 
 /**
- *
+ * User is the model behind the users
  */
 class User extends ActiveRecord implements IdentityInterface
 {
 
   /**
-   *
+   * @return array the validation rules.
    */
   public static function findIdentity($id)
   {
@@ -26,15 +26,15 @@ class User extends ActiveRecord implements IdentityInterface
   }
 
   /**
-   *
+   * @return string
    */
   public static function findIdentityByAccessToken($token, $type = null)
   {
-    throw new NotSupportedException();//I don't implement this method because I don't have any access token column in my database
+    throw new NotSupportedException();
   }
 
   /**
-   *
+   * @return integear
    */
   public function getId()
   {
@@ -42,15 +42,15 @@ class User extends ActiveRecord implements IdentityInterface
   }
 
   /**
-   *
+   * @return string
    */
   public function getAuthKey()
   {
-    return $this->authKey;//Here I return a value of my authKey column
+    return $this->authKey;
   }
 
   /**
-   *
+   * @return string
    */
   public function validateAuthKey($authKey)
   {
@@ -58,7 +58,7 @@ class User extends ActiveRecord implements IdentityInterface
   }
 
   /**
-   *
+   * @return string
    */
   public static function findByUsername($username)
   {
@@ -66,7 +66,7 @@ class User extends ActiveRecord implements IdentityInterface
   }
 
   /**
-   *
+   * @return string
    */
   public function validatePassword($password)
   {

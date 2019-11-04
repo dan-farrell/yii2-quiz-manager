@@ -12,9 +12,6 @@ use yii\web\Controller;
 use app\models\Question;
 use app\models\Quiz;
 
-/**
- *
- */
 class QuizController extends Controller
 {
 

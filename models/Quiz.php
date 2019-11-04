@@ -10,13 +10,13 @@ namespace app\models;
 use app\models\Question;
 
 /**
- *
+ * Quiz is the model behind the quizs
  */
 class Quiz extends \yii\db\ActiveRecord
 {
 
   /**
-   *
+   * @return array the validation rules.
    */
   public function rules()
   {
@@ -27,6 +27,8 @@ class Quiz extends \yii\db\ActiveRecord
 
   /**
    * @inheritdoc
+   *
+   * @return string
    */
   public static function tableName()
   {
@@ -34,7 +36,7 @@ class Quiz extends \yii\db\ActiveRecord
   }
 
   /**
-   *
+   * @return array
    */
   public function attributeLabels()
   {

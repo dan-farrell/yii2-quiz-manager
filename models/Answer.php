@@ -8,13 +8,13 @@ namespace app\models;
  */
 
 /**
- *
+ * Answer is the model behind the answers
  */
 class Answer extends \yii\db\ActiveRecord
 {
 
   /**
-   *
+   * @return array the validation rules.
    */
   public function rules()
   {
@@ -25,6 +25,8 @@ class Answer extends \yii\db\ActiveRecord
 
   /**
    * @inheritdoc
+   *
+   * @return string
    */
   public static function tableName()
   {
@@ -32,7 +34,7 @@ class Answer extends \yii\db\ActiveRecord
   }
 
   /**
-   *
+   * @return array
    */
   public function attributeLabels()
   {

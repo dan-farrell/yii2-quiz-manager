@@ -11,9 +11,6 @@ use yii\data\ArrayDataProvider;
 use yii\web\Controller;
 use app\models\Answer;
 
-/**
- * AnswerController that is used to
- */
 class AnswerController extends Controller
 {
 
@@ -26,6 +23,7 @@ class AnswerController extends Controller
   {
     $answer = new Answer();
     $answer->load($_POST);
+
     $answer->save();
 
     return $this->redirect(['quiz/index']);
@@ -60,6 +58,7 @@ class AnswerController extends Controller
       ->one();
 
     $answer->load($_POST);
+
     $answer->save();
 
     return $this->redirect(['quiz/index']);

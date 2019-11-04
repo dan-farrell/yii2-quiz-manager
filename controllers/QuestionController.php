@@ -12,9 +12,6 @@ use yii\web\Controller;
 use app\models\Answer;
 use app\models\Question;
 
-/**
- *
- */
 class QuestionController extends Controller
 {
 
@@ -27,6 +24,7 @@ class QuestionController extends Controller
   {
     $question = new Question();
     $question->load($_POST);
+
     $question->save();
 
     return $this->redirect(['quiz/index']);
@@ -61,6 +59,7 @@ class QuestionController extends Controller
       ->one();
 
     $question->load($_POST);
+
     $question->save();
 
     return $this->redirect(['quiz/index']);
