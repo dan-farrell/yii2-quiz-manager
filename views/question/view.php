@@ -10,6 +10,10 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\helpers\Url;
 
+/* @var $dataProvider array */
+/* @var $answer array */
+/* @var $questionId interger */
+
 $this->title = 'Quiz Manager - Edit - '.$title;
 
 ?>

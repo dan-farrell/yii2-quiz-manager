@@ -8,9 +8,10 @@
 use yii\bootstrap\Html;
 use yii\widgets\ActiveForm;
 
+/* @var $questionId integer */
+
 ?>
 
-<!-- Modal -->
 <div class="modal fade" id="addAnswer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

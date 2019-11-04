@@ -9,6 +9,10 @@ use yii\bootstrap\Html;
 use yii\helpers\Url;
 use yii\widgets\ListView;
 
+/* @var $title string */
+/* @var $quizId integer */
+/* @var $dataProvider array */
+
 $this->title = 'Quiz Manager - View - '.$title;
 
 ?>

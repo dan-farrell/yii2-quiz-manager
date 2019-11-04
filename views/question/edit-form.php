@@ -8,6 +8,8 @@
 use yii\bootstrap\Html;
 use yii\widgets\ActiveForm;
 
+/* @var $id integer */
+
 ?>
 
 <div class="col-lg-offset-3 col-md-6">

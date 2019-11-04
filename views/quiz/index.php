@@ -12,6 +12,9 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\helpers\Url;
 
+/* @var $dataProvider array */
+/* @var $quiz array */
+
 $template = '{view}';
 
 if (Yii::$app->user->identity->permission === 'edit') {

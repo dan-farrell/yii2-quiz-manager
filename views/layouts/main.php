@@ -5,13 +5,13 @@
  * @copyright 2019 All rights reserved
  */
 
-/* @var $this \yii\web\View */
-/* @var $content string */
-
 use yii\widgets\Breadcrumbs;
 use yii\helpers\Html;
 use app\assets\AppAsset;
 use app\widgets\Alert;
+
+/* @var $this \yii\web\View */
+/* @var $content string */
 
 AppAsset::register($this);
 

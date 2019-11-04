@@ -34,7 +34,7 @@ class User extends ActiveRecord implements IdentityInterface
   }
 
   /**
-   * @return integear
+   * @return integer
    */
   public function getId()
   {

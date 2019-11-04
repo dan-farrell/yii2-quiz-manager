@@ -7,6 +7,8 @@
 
 use app\models\Answer;
 
+/* @var $query array */
+
 $query = Answer::find()
   ->andWhere(['question_id' => $model->question_id])
   ->orderBy(['answer_id' => SORT_ASC])
