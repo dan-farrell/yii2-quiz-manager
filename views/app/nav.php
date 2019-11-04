@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @author Dan Farrell <farrell.d@live.co.uk>
+ * @copyright 2019 All rights reserved
+ */
+
 use yii\bootstrap\Dropdown;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;

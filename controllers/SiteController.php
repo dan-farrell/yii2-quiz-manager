@@ -2,6 +2,11 @@
 
 namespace app\controllers;
 
+/**
+ * @author Dan Farrell <farrell.d@live.co.uk>
+ * @copyright 2019 All rights reserved
+ */
+
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;

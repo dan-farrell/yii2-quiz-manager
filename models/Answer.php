@@ -3,6 +3,11 @@
 namespace app\models;
 
 /**
+ * @author Dan Farrell <farrell.d@live.co.uk>
+ * @copyright 2019 All rights reserved
+ */
+
+/**
  *
  */
 class Answer extends \yii\db\ActiveRecord

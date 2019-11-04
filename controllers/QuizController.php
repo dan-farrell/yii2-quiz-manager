@@ -2,6 +2,11 @@
 
 namespace app\controllers;
 
+/**
+ * @author Dan Farrell <farrell.d@live.co.uk>
+ * @copyright 2019 All rights reserved
+ */
+
 use yii\data\ArrayDataProvider;
 use yii\web\Controller;
 use app\models\Question;

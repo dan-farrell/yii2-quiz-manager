@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @author Dan Farrell <farrell.d@live.co.uk>
+ * @copyright 2019 All rights reserved
+ */
+
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\models\LoginForm */

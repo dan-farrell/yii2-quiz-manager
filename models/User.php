@@ -2,6 +2,11 @@
 
 namespace app\models;
 
+/**
+ * @author Dan Farrell <farrell.d@live.co.uk>
+ * @copyright 2019 All rights reserved
+ */
+
 use \yii\base\BaseObject;
 use \yii\db\ActiveRecord;
 use \yii\web\IdentityInterface;
