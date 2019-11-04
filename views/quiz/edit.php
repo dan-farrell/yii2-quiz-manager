@@ -21,7 +21,7 @@ $this->title = 'Quiz Manager - Edit - '.$title;
 
 <div class="row mb-15">
   <div class="col-xs-6 text-left">
-    <?= Html::a('<span class="glyphicon glyphicon-chevron-left"></span>Back to Quizzes', Url::to(['quiz/index']), ['class'=>'btn btn-primary btn-rounded btn-back']); ?>
+    <?= Html::a('<span class="glyphicon glyphicon-chevron-left"></span>Back', Url::to(['quiz/index']), ['class'=>'btn btn-primary btn-rounded btn-back']); ?>
   </div><!-- /.col-xs-6.text-left -->
 
   <div class="col-xs-6 text-right">
