@@ -38,11 +38,9 @@ use yii\widgets\ActiveForm;
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-rounded" data-dismiss="modal">Close</button>
-        <!-- Button to submit the new data to the database and close the modal -->
-        <?= Html::submitButton('Save', [
-          'class' => 'btn btn-primary btn-rounded',
-          // 'data-dismiss' => 'modal',
-        ]); ?>
+
+        <!-- Button to submit the new data to the database -->
+        <?= Html::submitButton('Save', ['class' => 'btn btn-primary btn-rounded']); ?>
       </div><!-- /.modal-footer -->
 
       <?php ActiveForm::end(); ?>

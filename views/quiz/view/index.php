@@ -24,4 +24,4 @@ $query = Answer::find()
       <?php } ?>
     </ol>
   <?php } ?>
-</li>
+</li><!-- /.question-list-item -->

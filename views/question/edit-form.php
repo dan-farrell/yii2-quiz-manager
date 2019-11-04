@@ -27,4 +27,4 @@ use yii\widgets\ActiveForm;
 
   ActiveForm::end();
   ?>
-</div>
+</div><!-- /.col-lg-offset-3.col-md-6 -->

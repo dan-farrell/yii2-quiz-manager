@@ -30,14 +30,14 @@ if (Yii::$app->user->identity->permission === 'edit') {
         'data-target' => '#createQuiz',
       ]);
     } ?>
-  </div>
-</div>
+  </div><!-- /.col-md-12.text-right -->
+</div><!-- /.row.mb-15 -->
 
 <div class="row">
   <div class="col-md-12">
     <h3>Quiz Manager</h3>
-  </div>
-</div>
+  </div><!-- /.col-md-12 -->
+</div><!-- /.row -->
 
 <div class="row">
   <div class="col-md-12">
@@ -74,8 +74,8 @@ if (Yii::$app->user->identity->permission === 'edit') {
         ],
       ],
     ]); ?>
-  </div>
-</div>
+  </div><!-- /.col-md-12 -->
+</div><!-- /.row -->
 
 <?php if (Yii::$app->user->identity->permission === 'edit') {
   echo $this->render('/quiz/components/create-quiz', ['quiz' => $quiz]);

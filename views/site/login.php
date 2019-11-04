@@ -43,4 +43,4 @@ $this->title = 'Login';
 
     <?php ActiveForm::end(); ?>
   </div><!-- /.site-login -->
-</div>
+</div><!-- /.col-lg-offset-3.col-md-6 -->

@@ -16,20 +16,20 @@ $this->title = 'Quiz Manager - View - '.$title;
 <div class="row mb-15">
   <div class="col-xs-6 text-left">
     <?= Html::a('<span class="glyphicon glyphicon-chevron-left"></span>Back', Url::to(['quiz/index']), ['class'=>'btn btn-primary btn-rounded btn-back']); ?>
-  </div>
+  </div><!-- /.col-xs-6.text-left -->
 
   <div class="col-xs-6 text-right">
     <?php if (Yii::$app->user->identity->permission === 'edit') {
       echo Html::a('Edit Quiz', Url::to(['quiz/edit', 'id' => $quizId]), ['class'=>'btn btn-primary btn-rounded']);
     } ?>
-  </div>
-</div>
+  </div><!-- /.col-xs-6.text-left -->
+</div><!-- /.row.md-15 -->
 
 <div class="row mb-15">
   <div class="col-md-12 text-left">
     <h3><?= $title; ?></h3>
-  </div>
-</div>
+  </div><!-- /.col-md-12.text-left -->
+</div><!-- /.row.md-15 -->
 
 <div class="row">
   <div class="col-md-12">
@@ -44,5 +44,5 @@ $this->title = 'Quiz Manager - View - '.$title;
       ],
       'layout' => '{items}'
     ]); ?>
-  </div>
-</div>
+  </div><!-- /.col-md-12 -->
+</div><!-- /.row -->
